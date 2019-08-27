@@ -8,11 +8,7 @@ const Header = (props) => {
           <Link className="active item" to="/">Streamer</Link>
           <div className="right menu">
             <Link className="item" to="/">Streams</Link>
-            <GoogleAuth
-                login={props.login}
-                onLoginStatusUpdate={props.onLoginStatusUpdate}
-                onUserDetailUpdate={props.onUserDetailUpdate}
-                />
+            <GoogleAuth />
           </div>
         </div>
     );
