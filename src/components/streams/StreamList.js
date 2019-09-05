@@ -29,7 +29,7 @@ class StreamList extends React.Component {
                     {this.renderAdmin(stream)}
                     <i aria-hidden="true" className="github large icon middle aligned"></i>
                     <div className="content">
-                      <div className="header">{stream.title}</div>
+                      <Link className="header" to={`/streams/${stream.id}`}>{stream.title}</Link>
                       <div className="description">{stream.description}</div>
                     </div>
                 </div>
