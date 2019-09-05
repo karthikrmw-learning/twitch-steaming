@@ -54,9 +54,12 @@ export const fetchStream = (streamId) => {
 
 export const editStream = (streamId, formValues) => {
     return async (dispatch) => {
-        const response = await streams.put(`/stream/${streamId}`, formValues);
+        const response = await streams.patch(`/streams/${streamId}`, formValues);
 
         dispatch({ type : EDIT_STREAM, payload : response.data });
+
+        // on success of edit stream, navigate user to stream lists
+        history.push('/')
     };
 }
 
@@ -65,5 +68,8 @@ export const deleteStream = (streamId) => {
         await streams.delete(`/streams/${streamId}`);
 
         dispatch({ type : DELETE_STREAM, payload : streamId });
+
+        // on success of delete stream, navigate user to stream lists
+        history.push('/')
     };
 }
